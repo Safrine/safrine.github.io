@@ -1,0 +1,56 @@
+body, html{
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+  }
+  
+body{
+    width: 100%;
+    font: 100%/1.5 "Roboto", Verdana, sans-serif;
+    background:
+        radial-gradient(closest-corner, rgba(16, 47, 70, 0) 60%, rgba(16, 47, 70, 0.26)),
+        linear-gradient(108deg, #ff6600, #000033 90%);
+    display: table;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    color: white;
+}
+
+#open-button1{
+    position: absolute;
+    bottom: 5px;
+    left: 60%;
+    transform: translateX(-50%);
+}
+
+#open-button2{
+  position: absolute;
+  bottom: 5px;
+  left: 40%;
+  transform: translateX(-50%);
+}
+
+a{
+color: white;
+}
+
+h1{
+    margin: 2%;
+}
+
+
+.iframe-container{
+    position: relative;
+    width: 90%;
+    padding-bottom: 56.25%; 
+    margin: 0 auto;
+    height: 0;
+  }
+  .iframe-container iframe{
+    position: absolute;
+    top:0;
+    left: 20%;
+    width: 60%;
+    height: 60%;
+  }

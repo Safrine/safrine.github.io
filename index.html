@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <title>Safrine Land</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  </head>
+
+  <body>
+    <div class="ciel">
+      <div class="info">
+        <h1 class="slideInLeft animated text-right">Safrine Cheickalavoudine</h1>
+        <h2 class="slideInRight animated text-right">IT Engineer</h2>
+        <h2 class="slideInRight animated text-right">Check out my projects</h2>
+      </div>
+    </div>
+
+    <div class="herbe">
+      <img class="tuyau" src="image/Tuyau.png" alt="">
+
+      <img id="toad-normal" class="toad" src="image/toad-normal.png" alt="">
+      <img id="toad-parle" class="toad" src="image/toad-parle.png" alt="">
+
+      <div class="caisse caisse-pingpong" id="caisse-pingpong">
+      </div>
+      <div class="caisse caisse-cuttherope" id="caisse-cuttherope">
+      </div>
+      <div class="caisse caisse-ikuro" id="caisse-ikuro">
+      </div>
+      <div class="caisse caisse-brick" id="caisse-brick">
+      </div>
+      <div class="caisse caisse-umatch" id="caisse-umatch">
+      </div>
+      <div class="caisse caisse-projet" id="caisse-projet">
+      </div>
+    </div>
+
+    <div class="terre">
+
+    </div>
+
+    <div id="descriptionBox" class="descriptionBox">
+      <img id="close" class="close-logo" src="image/close.png" alt="">
+
+      <h3 id="title"></h3>
+      <p id="description"></p>
+
+      <button id="open-button" class="btn btn-info" type="button" name="button"></button>
+
+      </div>
+    </div>
+
+    <script type="text/javascript">
+      $(document).ready(function() {
+
+        var title = "";
+        var textedescription = "";
+        var lien = "";
+
+        $('#close').click(function(){
+          hideToadTalk();
+          initCaisse();
+        });
+
+        $('#caisse-pingpong').click(function(){
+          initCaisse();
+          $('#open-button').show();
+          title = "Ping Pong Party";
+          textedescription = "Simulation of a Ping Pong Party executed in Maya software. \n It was made by a group of 4 people during my engineering school training at ESIEE Paris.";
+          lien = "PingPong/index.html"
+          showToadTalk(title, textedescription, lien);
+          $('#caisse-pingpong').css('background-image', 'url(image/caisse-active.png)');
+        });
+
+        $('#caisse-cuttherope').click(function(){
+          initCaisse();
+          $('#open-button').show();
+          title = "Cut The Rope";
+          textedescription = "Imitation of the great game 'Cut the Rope' using Unity platform. \n This project was carried out alone with the supervision of M. David Bilemdjian. The latter is an expert in the field of video games with a demonstrated history of working in this industry";
+          $('#title').html(title);
+          $('#description').html(textedescription);
+          lien = "CutTheRope/index.html"
+          showToadTalk(title, textedescription, lien);
+          $('#caisse-cuttherope').css('background-image', 'url(image/caisse-active.png)');
+
+          
+        });
+
+        $('#caisse-ikuro').click(function(){
+          initCaisse();
+          $('#open-button').show();
+          title = "IKURO";
+          textedescription = "Design and development of a 3D infiltration game on Unity. \n This project was realized by a group of 3 people with the supervision of M. David Bilemdjian. The latter is an expert in the field of video games with a demonstrated history of working in this industry.";
+          lien = "Ikuro/index.html"
+          showToadTalk(title, textedescription, lien);
+          $('#caisse-ikuro').css('background-image', 'url(image/caisse-active.png)');
+        });
+
+        $('#caisse-brick').click(function(){
+          initCaisse();
+          $('#open-button').show();
+          title = "3D Brick Breaker";
+          textedescription = "Design and development of a 3D Brick Breaker using Unity platform. \n This project was carried out alone with the supervision of M. David Bilemdjian. The latter is an expert in the field of video games with a demonstrated history of working in this industry";
+          lien = "BrickBreaker/index.html"
+          showToadTalk(title, textedescription, lien);
+          $('#caisse-brick').css('background-image', 'url(image/caisse-active.png)');
+        });
+
+        $('#caisse-umatch').click(function(){
+          initCaisse();
+          $('#open-button').show();
+          title = "UMatch Project";
+          textedescription = "The aim of the Umatch project is to express oneself anonymously. \n The main feature is to detect faces on an image or video and replace them with a 3D emoji. This one has a similar expression to the detected face, a recalculated mouth and an adequate rotation. \n This annual project has been realized in group with the use of Maya, for the 3D models, and Python for the Machine Learning.";
+          lien = "https://github.com/NiroanESIEE/umatch"
+          showToadTalk(title, textedescription, lien);
+          $('#caisse-umatch').css('background-image', 'url(image/caisse-active.png)');
+          $('#open-button').html("<a href='" + lien + "'>GitHub link</a>")
+        });
+
+        $('#caisse-projet').click(function(){
+          initCaisse();
+          $('#open-button').show();
+          title = "Drawing Gallery";
+          textedescription = "I love drawing ! Let's check my gallery to get a preview of my passion in this domain";
+          lien = "Gallery/index.html"
+          showToadTalk(title, textedescription, lien);
+          $('#caisse-projet').css('background-image', 'url(image/caisse-active.png)');
+        });
+
+        function showToadTalk(title, textedescription, lien){
+          hideToadTalk();
+          $('#toad-normal').hide();
+          $('#toad-parle').show();
+          description(title, textedescription, lien);
+          $('#descriptionBox').show();
+        }
+
+        function hideToadTalk(){
+          $('#toad-normal').show();
+          $('#toad-parle').hide();
+          $('#descriptionBox').hide();
+        }
+
+        function description(title, textedescription, lien){
+          $('#title').html(title);
+          $('#description').html(textedescription);
+          $('#open-button').html("<a href='" + lien + "'>Check out this !</a>")
+        }
+
+        function initCaisse(){
+          $('#caisse-pingpong').css('background-image', 'url(image/hatena_anime.png)');
+          $('#caisse-cuttherope').css('background-image', 'url(image/hatena_anime.png)');
+          $('#caisse-ikuro').css('background-image', 'url(image/hatena_anime.png)');
+          $('#caisse-brick').css('background-image', 'url(image/hatena_anime.png)');
+          $('#caisse-umatch').css('background-image', 'url(image/hatena_anime.png)');
+          $('#caisse-projet').css('background-image', 'url(image/hatena_anime.png)');
+
+        }
+      });
+    </script>
+  </body>
+</html>
